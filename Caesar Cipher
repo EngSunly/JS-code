@@ -1,0 +1,27 @@
+function rot13(str) {
+
+    let arr = str.split('');
+    let newArr = [];
+    let re = /[A-Z]/;
+    let re2 = /[A-M]/;
+    let re3 = /[N-Z]/;
+    for (let i = 0; i < arr.length; i++){
+        if (re.test(arr[i])){
+            if (re2.test(arr[i])){
+                newArr.push(String.fromCharCode(arr[i].charCodeAt(0) + 13));
+            }
+            else if (re3.test(arr[i])){
+                newArr.push(String.fromCharCode(arr[i].charCodeAt(0) - 13));
+            }
+        }
+        else{
+            newArr.push(arr[i]);
+        }
+    }
+    str = newArr.join('');
+
+    return str;
+
+}
+
+rot13("SERR PBQR PNZC");

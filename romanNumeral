@@ -1,0 +1,70 @@
+function convertToRoman(num) {
+    let arr = [];
+    if (num >= 1000){
+        let m = Math.floor(num / 1000);
+        num = num % 1000;
+        for (let i = 0; i < m; i++){
+            arr.push("M");
+        }
+    }
+    if (num >= 900){
+        arr.push("CM");
+        num = num % 900;
+    }
+    if (num >= 500){
+        arr.push("D");
+        num = num % 500;
+    }
+    if (num >= 400){
+        arr.push("CD");
+        num = num % 400;
+    }
+    if (num >= 100){
+        let c = Math.floor(num / 100);
+        num = num % 100;
+        for (let i = 0; i < c; i++){
+            arr.push("C");
+        }
+    }
+    if (num >= 90){
+        arr.push("XC");
+        num = num % 90;
+    }
+    if (num >= 50){
+        arr.push("L");
+        num = num % 50;
+    }
+    if (num >= 40){
+        arr.push("XL");
+        num = num % 40;
+    }
+    if (num >= 10){
+        let x = Math.floor(num / 10);
+        num = num % 10;
+        for (let i = 0; i < x; i++){
+            arr.push("X");
+        }
+    }
+    if (num >= 9){
+        arr.push("IX");
+        num = num % 9;
+    }
+    if (num >= 5){
+        arr.push("V");
+        num = num % 5;
+    }
+    if (num >= 4){
+        arr.push("IV");
+        num = num % 4;
+    }
+    if (num >= 1){
+        for (let i = 0; i < num; i++){
+            arr.push("I");
+        }
+    }
+    num = arr.join("");
+
+ return num;
+}
+
+convertToRoman(36);
